@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deliveries", "Deliveries", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organisations", "Organisations", "{2A06A0EE-02F1-4B39-9F5E-EE5A2A463B8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testbed", "Testbed\Testbed.csproj", "{7FD4D2BC-D4E9-4D7D-8D55-9238929CDC1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD4D2BC-D4E9-4D7D-8D55-9238929CDC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD4D2BC-D4E9-4D7D-8D55-9238929CDC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD4D2BC-D4E9-4D7D-8D55-9238929CDC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD4D2BC-D4E9-4D7D-8D55-9238929CDC1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2850D192-4A7E-48F5-BC5E-B7F81EE30754} = {02B3CE66-AA9B-458D-831C-13434B9CB3F5}

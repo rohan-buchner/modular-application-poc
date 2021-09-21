@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using OrderIn.NetCore.PluginBuilder;
-using Organisation;
+using Organisations.Core;
 
 namespace Organisations.Database.Mongodb
 {

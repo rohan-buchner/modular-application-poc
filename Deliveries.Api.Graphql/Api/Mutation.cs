@@ -1,6 +1,6 @@
 namespace Deliveries.Api.Graphql.Api
 {
-    public class Mutations
+    public class DeliveriesMutation
     {
         // CreateDelivery
     }

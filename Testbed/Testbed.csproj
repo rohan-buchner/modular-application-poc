@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>aspnet-Testbed-25E30353-26C4-4D93-91FC-378189E5E0A7</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="OrderIn.NetCore.PluginBuilder" Version="0.0.8-alpha" />
+        <PackageReference Include="OrderIn.NetCore.PluginProvider" Version="0.0.15-alpha" />
+        <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
+        <PackageReference Include="HotChocolate.AspNetCore.Voyager" Version="10.5.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Deliveries.Api.Graphql\Deliveries.Api.Graphql.csproj" />
+      <ProjectReference Include="..\Deliveries.Core\Deliveries.Core.csproj" />
+      <ProjectReference Include="..\Deliveries.Database.NpgSql\Deliveries.Database.NpgSql.csproj" />
+      <ProjectReference Include="..\Organisations.Api.Graphql\Organisations.Api.Graphql.csproj" />
+      <ProjectReference Include="..\Organisations.Core\Organisations.Core.csproj" />
+      <ProjectReference Include="..\Organisations.Database.Mongodb\Organisations.Database.Mongodb.csproj" />
+    </ItemGroup>
+
+</Project>

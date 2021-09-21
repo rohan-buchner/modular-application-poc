@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OrderIn.NetCore.Graphql.Debugging;
 using OrderIn.NetCore.PluginBuilder;
-using Organisation;
+using Organisations.Core;
 using StackExchange.Redis;
 
 namespace Organisations.Api.Graphql

@@ -1,6 +1,6 @@
 using OrderIn.NetCore.PluginBuilder;
 
-namespace Organisation
+namespace Organisations.Core
 {
     public class OrganisationsModuleDefinition: OrderInModuleDefinition
     {

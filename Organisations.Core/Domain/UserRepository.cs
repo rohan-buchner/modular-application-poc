@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Organisation.Domain
+namespace Organisations.Core.Domain
 {
     public class UserRepository
     {

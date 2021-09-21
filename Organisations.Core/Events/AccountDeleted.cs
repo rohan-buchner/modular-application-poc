@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Organisation.Events
+namespace Organisations.Core.Events
 {
     public class AccountDeleted
     {

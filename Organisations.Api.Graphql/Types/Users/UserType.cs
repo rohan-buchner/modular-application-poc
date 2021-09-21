@@ -1,5 +1,5 @@
 using HotChocolate.Types;
-using Organisation.Domain;
+using Organisations.Core.Domain;
 
 namespace Organisations.Api.Graphql.Types.Users
 {

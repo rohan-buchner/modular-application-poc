@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Core.Events;
-using Organisation.Domain;
+using Organisations.Core.Domain;
 
 namespace Organisations.Database.Mongodb
 {

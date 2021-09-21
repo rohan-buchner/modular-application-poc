@@ -4,7 +4,7 @@ using HotChocolate;
 
 namespace Deliveries.Api.Graphql.Api
 {
-    public class Query
+    public class DeliveriesQuery
     {
         public IEnumerable<Core.Domain.Delivery> GetDeliveries([Service] DeliveriesRepository repository) =>
             repository.GetDeliveries();

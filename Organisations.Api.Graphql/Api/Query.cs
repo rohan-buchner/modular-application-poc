@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using HotChocolate;
-using Organisation.Domain;
+using Organisations.Core.Domain;
 
 namespace Organisations.Api.Graphql.Api
 {
-    public class Query
+    public class OrganisationsQuery
     {
         public IEnumerable<User> GetUsers([Service] UserRepository repository) =>
             repository.GetUsers();

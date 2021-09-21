@@ -1,13 +1,13 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using OrderIn.NetCore.PluginBuilder;
-using Organisation.Domain;
+using Organisations.Core.Domain;
 
-namespace Organisation
+namespace Organisations.Core
 {
     public static class ConfigureServices
     {
-        public static IServiceCollection AddOrderinOrganisationServices(this IServiceCollection serviceCollection, Action<PluginConfigurationBuilder<OrganisationsModuleDefinition>> configure)
+        public static IServiceCollection AddOrganisationServices(this IServiceCollection serviceCollection, Action<PluginConfigurationBuilder<OrganisationsModuleDefinition>> configure)
         {
             var config = new PluginConfigurationBuilder<OrganisationsModuleDefinition>(serviceCollection);
             configure(config);
