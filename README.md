@@ -4,6 +4,9 @@
 tye run --dashboard -v Debug
 ```
 
+How to install Tye
+> https://github.com/dotnet/tye/blob/main/docs/getting_started.md
+
 2. Run the testbed app.
 
 ```
