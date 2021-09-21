@@ -1,0 +1,52 @@
+name: modular_app
+
+extensions:
+  - name: zipkin
+
+services:
+#  - name: testbed
+#    project: ./Testbed/Testbed.csproj
+#    bindings:
+#      - port: 5001
+  - name: redis
+    image: redis
+    bindings:
+      - port: 6379
+        connectionString: "${host}:${port}"
+  - name: postgres
+    image: postgres
+    env:
+      - name: POSTGRES_PASSWORD
+        value: "pass@word1"
+    bindings:
+      - port: 5432
+        connectionString: Server=${host};Port=${port};User Id=postgres;Password=${env:POSTGRES_PASSWORD};
+  - name: rabbitmq
+    image: rabbitmq:3-management
+    bindings:
+      - name: rabbit
+        port: 5672
+        protocol: rabbitmq
+      - name: management
+        port: 15672
+  - name: mongo
+    image: mongo
+    env:
+      - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+        value: root
+      - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+        value: example
+    bindings:
+      - port: 27017
+        connectionString: "mongodb://${host}:${port}"
+  - name: mongo-express
+    image: mongo-express
+    bindings:
+      - port: 8081
+        containerPort: 8081
+        protocol: http
+    env:
+      - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+        value: root
+      - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+        value: example

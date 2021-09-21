@@ -9,10 +9,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using OrderIn.NetCore.PluginProvider;
 using Organisations.Api.Graphql;
+using Organisations.Api.Mongodb;
 using Organisations.Core;
-using Organisations.Database.Mongodb;
 using StackExchange.Redis;
 
 namespace Testbed
@@ -32,8 +31,6 @@ namespace Testbed
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddOrderinPluginServices(_config);
-
             services.AddDeliveriesServices(builder =>
             {
                 builder
@@ -52,6 +49,7 @@ namespace Testbed
 
             services.AddHttpClient(Constants.DeliveriesSchema, 
                 c => c.BaseAddress = new Uri($"{Constants.ApplicationUrl}/{Constants.DeliveriesSchema}"));
+            
             services.AddHttpClient(Constants.OrganisationsSchema,
                 c => c.BaseAddress = new Uri($"{Constants.ApplicationUrl}/{Constants.OrganisationsSchema}"));
             
@@ -64,6 +62,7 @@ namespace Testbed
                     opt.StrictValidation = false;
                 })
                 .AddRemoteSchemasFromRedis(Constants.RedisConfigurationName, sp => sp.GetRequiredService<ConnectionMultiplexer>())
+                .AddTypeRewriter(new RenameTypeRewriter())
                 .ModifyOptions(x => x.RemoveUnreachableTypes = true);
         }
 
@@ -85,12 +84,10 @@ namespace Testbed
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapOrderinPluginEndpoint();
-
-                endpoints.MapGraphQL("/graphql", Constants.TestbedSchema);
-
                 endpoints.MapDeliveriesEndpoint($"/{Constants.DeliveriesSchema}", Constants.DeliveriesSchema);
                 endpoints.MapOrganisationsEndpoint($"/{Constants.OrganisationsSchema}", Constants.OrganisationsSchema);
+                
+                endpoints.MapGraphQL("/graphql", Constants.TestbedSchema);
             });
         }
     }

@@ -7,7 +7,10 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
-        <PackageReference Include="OrderIn.NetCore.PluginBuilder" Version="0.0.8-alpha" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ModuleBuilder\ModuleBuilder.csproj" />
     </ItemGroup>
 
 </Project>

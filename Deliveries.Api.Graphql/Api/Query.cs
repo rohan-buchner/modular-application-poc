@@ -4,12 +4,11 @@ using HotChocolate;
 
 namespace Deliveries.Api.Graphql.Api
 {
-    public class DeliveriesQuery
+    [GraphQLDescription("Deliveries Queries")]
+    public class Query
     {
-        public IEnumerable<Core.Domain.Delivery> GetDeliveries([Service] DeliveriesRepository repository) =>
+        [GraphQLDescription("Get The Deliveries")]
+        public IEnumerable<Delivery> GetDeliveries([Service] DeliveriesRepository repository) =>
             repository.GetDeliveries();
-
-        public Core.Domain.Delivery GetDelivery(int id, [Service] DeliveriesRepository repository) => 
-            repository.GetDelivery(id);
     }
 }

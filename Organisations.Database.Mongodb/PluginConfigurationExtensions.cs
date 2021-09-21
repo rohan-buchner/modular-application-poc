@@ -1,8 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 using Organisations.Core;
 
-namespace Organisations.Database.Mongodb
+namespace Organisations.Api.Mongodb
 {
     public static class PluginConfigurationExtensions
     {
@@ -17,7 +17,7 @@ namespace Organisations.Database.Mongodb
                     mongoOptions.EnableDebugging = enableDebugging;
                 });
 
-            builder.Services.AddSingleton<OrderinOrganisationsDbContext>();
+            builder.Services.AddSingleton<OrganisationsDbContext>();
 
             return builder;
         }

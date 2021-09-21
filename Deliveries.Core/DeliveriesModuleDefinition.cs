@@ -1,8 +1,8 @@
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 
 namespace Deliveries.Core
 {
-    public class DeliveriesModuleDefinition: OrderInModuleDefinition
+    public class DeliveriesModuleDefinition: ModuleDefinition
     {
         public override string ModuleName => "deliveries";
     }

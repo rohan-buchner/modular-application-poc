@@ -1,6 +1,6 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 using Organisations.Core.Domain;
 
 namespace Organisations.Core

@@ -1,7 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using OrderIn.NetCore.Graphql.Debugging;
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 using Organisations.Core;
 using StackExchange.Redis;
 
@@ -15,15 +13,13 @@ namespace Organisations.Api.Graphql
         {
             builder.Services
                 .AddSingleton(ConnectionMultiplexer.Connect(redisConnectionString));
-
-            builder.Services.AddMiniProfiler(options => { options.RouteBasePath = "/profiler"; });
-
+            
             schema ??= builder.GetModuleName;
+            
+            builder.Services.AddMiniProfiler(options => { options.RouteBasePath = $"{schema}/profiler"; });
 
             builder.Services.AddGraphQLServer(schema)
                 .MapOrganisationQueries()
-                .AddDiagnosticEventListener(sp =>
-                    new ConsoleQueryLogger(sp.GetService<ILogger<ConsoleQueryLogger>>()))
                 .InitializeOnStartup()
                 .PublishSchemaDefinition(c => c
                     .SetName(schema)

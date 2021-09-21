@@ -1,7 +1,7 @@
 using Deliveries.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 
 namespace Deliveries.Database.NpgSql
 {

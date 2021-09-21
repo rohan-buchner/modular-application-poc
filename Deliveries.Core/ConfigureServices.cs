@@ -1,7 +1,7 @@
 using System;
 using Deliveries.Core.Domain;
 using Microsoft.Extensions.DependencyInjection;
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 
 namespace Deliveries.Core
 {

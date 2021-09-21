@@ -5,7 +5,7 @@ using MongoDB.Driver;
 using MongoDB.Driver.Core.Events;
 using Organisations.Core.Domain;
 
-namespace Organisations.Database.Mongodb
+namespace Organisations.Api.Mongodb
 {
     public class MongoOptions
     {
@@ -14,11 +14,11 @@ namespace Organisations.Database.Mongodb
         public bool EnableDebugging { get; set; }
     }
 
-    public class OrderinOrganisationsDbContext
+    public class OrganisationsDbContext
     {
         private readonly IMongoDatabase _database;
 
-        public OrderinOrganisationsDbContext(ILogger<OrderinOrganisationsDbContext> logger, IOptions<MongoOptions> options)
+        public OrganisationsDbContext(ILogger<OrganisationsDbContext> logger, IOptions<MongoOptions> options)
         {
             var mongoConnectionUrl = new MongoUrl(options.Value.ConnectionString);
             var mongoClientSettings = MongoClientSettings.FromUrl(mongoConnectionUrl);

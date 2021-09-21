@@ -21,9 +21,8 @@ namespace Deliveries.Api.Graphql
         public static IRequestExecutorBuilder MapDeliveriesQueries(this IRequestExecutorBuilder builder)
         {
             return builder
-                .AddQueryType<DeliveriesQuery>()
-                .AddMutationType<DeliveriesMutation>()
-                .AddType<DeliveryType>();
+                .AddQueryType<Query>();
+            // .AddMutationType<DeliveriesMutation>()
         }
     }
 }

@@ -7,8 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="OrderIn.NetCore.PluginBuilder" Version="0.0.8-alpha" />
-        <PackageReference Include="OrderIn.NetCore.PluginProvider" Version="0.0.15-alpha" />
         <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
         <PackageReference Include="HotChocolate.AspNetCore.Voyager" Version="10.5.5" />
     </ItemGroup>

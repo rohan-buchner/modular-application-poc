@@ -6,16 +6,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="HotChocolate" Version="12.0.0-rc.4" />
-        <PackageReference Include="HotChocolate.Abstractions" Version="12.0.0-rc.4" />
-        <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.0-rc.4" />
-        <PackageReference Include="HotChocolate.Execution" Version="12.0.0-rc.4" />
-        <PackageReference Include="HotChocolate.Stitching.Redis" Version="12.0.0-rc.4" />
+        <PackageReference Include="HotChocolate" Version="12.0.0-rc.11" />
+        <PackageReference Include="HotChocolate.Abstractions" Version="12.0.0-rc.11" />
+        <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.0-rc.11" />
+        <PackageReference Include="HotChocolate.Execution" Version="12.0.0-rc.11" />
+        <PackageReference Include="HotChocolate.Stitching.Redis" Version="12.0.0-rc.11" />
 
         <PackageReference Include="MiniProfiler" Version="4.2.22" />
         <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
-        <PackageReference Include="OrderIn.NetCore.Graphql.Debugging" Version="0.0.7-alpha" />
-        <PackageReference Include="OrderIn.NetCore.PluginBuilder" Version="0.0.8-alpha" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,0 +1,66 @@
+version: '3.7'
+services:
+#  testbed:
+#    container_name: modular_app
+#    build:
+#      context: ..
+#      dockerfile: ./Testbed/Dockerfile
+#    ports:
+#      - "5001:80"
+#    depends_on:
+#      - redis
+#      - postgres
+#      - rabbitmq
+#      - mongo
+
+  postgres:
+    container_name: modular_app
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "pass@word1"
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    container_name: modular_app
+    image: "rabbitmq:3-management"
+    hostname: "rabbit"
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./volumes/rabbitmq:/etc/rabbitmq/rabbitmq.config
+
+  redis:
+    container_name: modular_app
+    image: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  mongo:
+    container_name: modular_app
+    image : mongo
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./volumes/mongo/database:/data/db
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+
+  mongo_express:
+    container_name: modular_app
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "root"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "example"
+      ME_CONFIG_MONGODB_URL: "mongodb://mongo:27017"
+    links:
+      - mongo

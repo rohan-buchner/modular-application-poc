@@ -1,8 +1,8 @@
-using OrderIn.NetCore.PluginBuilder;
+using ModuleBuilder;
 
 namespace Organisations.Core
 {
-    public class OrganisationsModuleDefinition: OrderInModuleDefinition
+    public class OrganisationsModuleDefinition: ModuleDefinition
     {
         public override string ModuleName => "organisations";
     }
