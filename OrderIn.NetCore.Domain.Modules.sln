@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deliveries.Core", "Deliveries.Core\Deliveries.Core.csproj", "{6AA7C452-EE15-439A-A7A7-03F83155A73D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deliveries.Api.Graphql", "Deliveries.Api.Graphql\Deliveries.Api.Graphql.csproj", "{2850D192-4A7E-48F5-BC5E-B7F81EE30754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deliveries.Database.NpgSql", "Deliveries.Database.NpgSql\Deliveries.Database.NpgSql.csproj", "{44554803-F6C0-46EA-A99E-4ECA47C2D044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organisations.Core", "Organisations.Core\Organisations.Core.csproj", "{A2EBC35C-9183-4B51-9554-52AB71201F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organisations.Database.Mongodb", "Organisations.Database.Mongodb\Organisations.Database.Mongodb.csproj", "{70391EE0-8140-4166-BC7B-CDDD34CCF51F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organisations.Api.Graphql", "Organisations.Api.Graphql\Organisations.Api.Graphql.csproj", "{845DD505-0B78-4068-8AFD-AD5764B7F7DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deliveries", "Deliveries", "{02B3CE66-AA9B-458D-831C-13434B9CB3F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organisations", "Organisations", "{2A06A0EE-02F1-4B39-9F5E-EE5A2A463B8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AA7C452-EE15-439A-A7A7-03F83155A73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA7C452-EE15-439A-A7A7-03F83155A73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA7C452-EE15-439A-A7A7-03F83155A73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA7C452-EE15-439A-A7A7-03F83155A73D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2850D192-4A7E-48F5-BC5E-B7F81EE30754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2850D192-4A7E-48F5-BC5E-B7F81EE30754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2850D192-4A7E-48F5-BC5E-B7F81EE30754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2850D192-4A7E-48F5-BC5E-B7F81EE30754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44554803-F6C0-46EA-A99E-4ECA47C2D044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44554803-F6C0-46EA-A99E-4ECA47C2D044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44554803-F6C0-46EA-A99E-4ECA47C2D044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44554803-F6C0-46EA-A99E-4ECA47C2D044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2EBC35C-9183-4B51-9554-52AB71201F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2EBC35C-9183-4B51-9554-52AB71201F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2EBC35C-9183-4B51-9554-52AB71201F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2EBC35C-9183-4B51-9554-52AB71201F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70391EE0-8140-4166-BC7B-CDDD34CCF51F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70391EE0-8140-4166-BC7B-CDDD34CCF51F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70391EE0-8140-4166-BC7B-CDDD34CCF51F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70391EE0-8140-4166-BC7B-CDDD34CCF51F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845DD505-0B78-4068-8AFD-AD5764B7F7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2850D192-4A7E-48F5-BC5E-B7F81EE30754} = {02B3CE66-AA9B-458D-831C-13434B9CB3F5}
+		{6AA7C452-EE15-439A-A7A7-03F83155A73D} = {02B3CE66-AA9B-458D-831C-13434B9CB3F5}
+		{44554803-F6C0-46EA-A99E-4ECA47C2D044} = {02B3CE66-AA9B-458D-831C-13434B9CB3F5}
+		{845DD505-0B78-4068-8AFD-AD5764B7F7DD} = {2A06A0EE-02F1-4B39-9F5E-EE5A2A463B8E}
+		{A2EBC35C-9183-4B51-9554-52AB71201F51} = {2A06A0EE-02F1-4B39-9F5E-EE5A2A463B8E}
+		{70391EE0-8140-4166-BC7B-CDDD34CCF51F} = {2A06A0EE-02F1-4B39-9F5E-EE5A2A463B8E}
+	EndGlobalSection
+EndGlobal
