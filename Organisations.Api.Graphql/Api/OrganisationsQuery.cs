@@ -5,9 +5,8 @@ using Organisations.Core.Domain;
 namespace Organisations.Api.Graphql.Api
 {
     [GraphQLDescription("Organisations Queries")]
-    public class Query
+    public class OrganisationsQuery
     {
-    
         [GraphQLDescription("Get the users")]
         public IEnumerable<User> GetUsers([Service] UserRepository repository) =>
             repository.GetUsers();

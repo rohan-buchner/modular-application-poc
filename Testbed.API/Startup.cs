@@ -1,4 +1,3 @@
-using System;
 using Deliveries.Api.Graphql;
 using Deliveries.Core;
 using Deliveries.Database.NpgSql;
@@ -12,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Organisations.Api.Graphql;
 using Organisations.Api.Mongodb;
 using Organisations.Core;
-using StackExchange.Redis;
+using Testbed.Common;
 
 namespace Testbed
 {
@@ -28,15 +27,12 @@ namespace Testbed
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            services.AddRazorPages();
-
             services.AddDeliveriesServices(builder =>
             {
                 builder
                     .UseNpgSql(_config.GetConnectionString(Constants.SqlKey))
                     .AddGraphQlEndpoints(_config.GetConnectionString(Constants.RedisKey),
-                        Constants.RedisConfigurationName, Constants.DeliveriesSchema);
+                        Constants.RedisConfigurationName, Constants.Deliveries.Schema);
             });
 
             services.AddOrganisationServices(builder =>
@@ -44,27 +40,10 @@ namespace Testbed
                 builder
                     .UseMongoDb(_config.GetConnectionString(Constants.MongoKey))
                     .AddGraphQlEndpoints(_config.GetConnectionString(Constants.RedisKey),
-                        Constants.RedisConfigurationName, Constants.OrganisationsSchema);
+                        Constants.RedisConfigurationName, Constants.Organisations.Schema);
             });
-
-            services.AddHttpClient(Constants.DeliveriesSchema, 
-                c => c.BaseAddress = new Uri($"{Constants.ApplicationUrl}/{Constants.DeliveriesSchema}"));
             
-            services.AddHttpClient(Constants.OrganisationsSchema,
-                c => c.BaseAddress = new Uri($"{Constants.ApplicationUrl}/{Constants.OrganisationsSchema}"));
-            
-            services.AddSingleton(ConnectionMultiplexer.Connect(_config.GetConnectionString(Constants.RedisKey)));
-
-            services
-                .AddGraphQLServer(Constants.TestbedSchema)
-                .ModifyOptions(opt =>
-                {
-                    opt.StrictValidation = false;
-                })
-                .AddRemoteSchemasFromRedis(Constants.RedisConfigurationName, sp => sp.GetRequiredService<ConnectionMultiplexer>())
-                .AddTypeRewriter(new RenameTypeRewriter())
-                .ModifyOptions(x => x.RemoveUnreachableTypes = true);
-        }
+           }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -84,10 +63,10 @@ namespace Testbed
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDeliveriesEndpoint($"/{Constants.DeliveriesSchema}", Constants.DeliveriesSchema);
-                endpoints.MapOrganisationsEndpoint($"/{Constants.OrganisationsSchema}", Constants.OrganisationsSchema);
+                endpoints.MapDeliveriesEndpoint(Constants.Deliveries.Path, Constants.Deliveries.Schema);
+                endpoints.MapOrganisationsEndpoint(Constants.Organisations.Path, Constants.Organisations.Schema);
                 
-                endpoints.MapGraphQL("/graphql", Constants.TestbedSchema);
+                // endpoints.MapGraphQL("/graphql", Constants.TestbedSchema);
             });
         }
     }

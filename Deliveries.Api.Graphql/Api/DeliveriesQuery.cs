@@ -5,7 +5,7 @@ using HotChocolate;
 namespace Deliveries.Api.Graphql.Api
 {
     [GraphQLDescription("Deliveries Queries")]
-    public class Query
+    public class DeliveriesQuery
     {
         [GraphQLDescription("Get The Deliveries")]
         public IEnumerable<Delivery> GetDeliveries([Service] DeliveriesRepository repository) =>

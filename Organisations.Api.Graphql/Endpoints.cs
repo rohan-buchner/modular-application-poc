@@ -20,7 +20,7 @@ namespace Organisations.Api.Graphql
         public static IRequestExecutorBuilder MapOrganisationQueries(this IRequestExecutorBuilder builder)
         {
             return builder
-                .AddQueryType<Query>();
+                .AddQueryType<OrganisationsQuery>();
         }
     }
 }

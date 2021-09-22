@@ -1,11 +1,10 @@
 ﻿{ 
   "profiles": {
-    "Testbed": {
+    "Testbed.API": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
-      "launchUrl": "https://localhost:5001/graphql",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -4,6 +4,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <UserSecretsId>aspnet-Testbed-25E30353-26C4-4D93-91FC-378189E5E0A7</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>Testbed.API</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,6 +19,7 @@
       <ProjectReference Include="..\Organisations.Api.Graphql\Organisations.Api.Graphql.csproj" />
       <ProjectReference Include="..\Organisations.Core\Organisations.Core.csproj" />
       <ProjectReference Include="..\Organisations.Database.Mongodb\Organisations.Database.Mongodb.csproj" />
+      <ProjectReference Include="..\Testbed.Common\Testbed.Common.csproj" />
     </ItemGroup>
 
 </Project>

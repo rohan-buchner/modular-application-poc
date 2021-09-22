@@ -25,7 +25,8 @@ namespace Organisations.Api.Graphql
                     .SetName(schema)
                     .PublishToRedis(configurationName,
                         sp => sp.GetRequiredService<ConnectionMultiplexer>())
-                );
+                )
+                .ModifyOptions(x => x.RemoveUnreachableTypes = true);;
 
             return builder;
         }
