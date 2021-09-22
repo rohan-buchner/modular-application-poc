@@ -13,7 +13,7 @@ using Organisations.Api.Mongodb;
 using Organisations.Core;
 using Testbed.Common;
 
-namespace Testbed
+namespace Testbed.API
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace Testbed
                 builder
                     .UseNpgSql(_config.GetConnectionString(Constants.SqlKey))
                     .AddGraphQlEndpoints(_config.GetConnectionString(Constants.RedisKey),
-                        Constants.RedisConfigurationName, Constants.Deliveries.Schema);
+                        Constants.RedisConfigurationName);
             });
 
             services.AddOrganisationServices(builder =>
@@ -40,10 +40,9 @@ namespace Testbed
                 builder
                     .UseMongoDb(_config.GetConnectionString(Constants.MongoKey))
                     .AddGraphQlEndpoints(_config.GetConnectionString(Constants.RedisKey),
-                        Constants.RedisConfigurationName, Constants.Organisations.Schema);
+                        Constants.RedisConfigurationName);
             });
-            
-           }
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -63,10 +62,8 @@ namespace Testbed
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDeliveriesEndpoint(Constants.Deliveries.Path, Constants.Deliveries.Schema);
-                endpoints.MapOrganisationsEndpoint(Constants.Organisations.Path, Constants.Organisations.Schema);
-                
-                // endpoints.MapGraphQL("/graphql", Constants.TestbedSchema);
+                endpoints.MapDeliveriesEndpoint(Constants.Deliveries.Path);
+                endpoints.MapOrganisationsEndpoint(Constants.Organisations.Path);
             });
         }
     }

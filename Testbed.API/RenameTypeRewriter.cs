@@ -3,7 +3,7 @@ using HotChocolate.Language;
 using HotChocolate.Stitching.Merge;
 using HotChocolate.Stitching.Merge.Rewriters;
 
-namespace Testbed
+namespace Testbed.API
 {
     public class RenameTypeRewriter : ITypeRewriter
     {

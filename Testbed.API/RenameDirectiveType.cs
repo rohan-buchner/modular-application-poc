@@ -1,6 +1,6 @@
 using HotChocolate.Types;
 
-namespace Testbed
+namespace Testbed.API
 {
     public class RenameDirectiveType : DirectiveType
     {
